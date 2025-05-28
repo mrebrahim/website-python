@@ -19,6 +19,8 @@ RUN wget https://chromedriver.storage.googleapis.com/$(wget -qO- https://chromed
 WORKDIR /app
 COPY . .
 
+RUN apt-get update && apt-get install -y wget
+
 # تثبيت المكتبات المطلوبة
 RUN pip install selenium requests
 
